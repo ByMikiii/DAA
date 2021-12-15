@@ -1,81 +1,66 @@
 CREATE DATABASE online_herny_obchod;
+USE online_herny_obchod;
 
-CREATE TABLE Games(
-    game_id INT AUTO_INCREMENT, PRIMARY KEY(game_id),
-    name VARCHAR(25),
-    genre_id INT,
-    publisher_id INT,
-    release_date TIMESTAMP,
-    KEY(genre_id),
-    KEY(publisher_id),
-    FOREIGN KEY (genre_id) REFERENCES Genres (genre_id),
-    FOREIGN KEY (publisher_id) REFERENCES Publishers (publisher_id)
-    );
-
-CREATE TABLE Users(
-    user_id INT AUTO_INCREMENT, PRIMARY KEY(user_id),
-    username VARCHAR(10),
-    email VARCHAR(30),
-    password VARCHAR(30),
-    wallet FLOAT,
-    address VARCHAR(30)
+CREATE TABLE `users` (
+  `user_id` int PRIMARY KEY AUTO_INCREMENT,
+  `username` varchar(255),
+  `email` varchar(255),
+  `password` varchar(255),
+  `wallet` float,
+  `address` varchar(255)
 );
 
-CREATE TABLE Price(
-    price_id INT AUTO_INCREMENT, PRIMARY KEY(price_id),
-    original_price FLOAT,
-    sale_price FLOAT,
-    game_id INT,
-    KEY(game_id),
-    FOREIGN KEY (game_id) REFERENCES Games(game_id)
+CREATE TABLE `games` (
+  `game_id` int PRIMARY KEY AUTO_INCREMENT,
+  `name` varchar(255),
+  `genre_id` int,
+  `publisher_id` int,
+  `release_date` timestamp
 );
 
-CREATE TABLE Genres(
-    genre_id INT AUTO_INCREMENT, PRIMARY KEY(genre_id),
-    genre_name VARCHAR(20)
+CREATE TABLE `publishers` (
+  `publisher_id` int PRIMARY KEY AUTO_INCREMENT,
+  `username` varchar(255),
+  `email` varchar(255)
 );
 
-CREATE TABLE Publishers(
-    publisher_id INT AUTO_INCREMENT, PRIMARY KEY(publisher_id),
-    username VARCHAR(20),
-    email VARCHAR (30)
+CREATE TABLE `genre` (
+  `genre_id` int PRIMARY KEY AUTO_INCREMENT,
+  `genre_name` varchar(255)
 );
 
-CREATE TABLE Reviews(
-    review_id INT AUTO_INCREMENT, PRIMARY KEY(review_id),
-    review VARCHAR(255),
-    user_id INT,
-    game_id INT,
-    KEY(user_id),
-    KEY(game_id),
-    FOREIGN KEY (user_id) REFERENCES Users(user_id),
-    FOREIGN KEY (game_id) REFERENCES Games(game_id)
+CREATE TABLE `price` (
+  `price_id` int PRIMARY KEY AUTO_INCREMENT,
+  `game_id` float,
+  `original_price` float,
+  `sale_price` float
 );
 
-CREATE TABLE Cart(
-    cart_id INT AUTO_INCREMENT, PRIMARY KEY(cart_id),
-    user_id INT,
-    invoice_id INT,
-    KEY(user_id),
-    KEY(invoice_id),
-    FOREIGN KEY (user_id) REFERENCES Users (user_id),
-    FOREIGN KEY (invoice_id) REFERENCES Invoice (invoice_id)
+CREATE TABLE `invoice` (
+  `invoice_id` int PRIMARY KEY AUTO_INCREMENT,
+  `user_id` int,
+  `total_price` float,
+  `date` timestamp
 );
 
-CREATE TABLE Cart_items(
-    game_id INT,
-    cart_id INT,
-    KEY(game_id),
-    KEY(cart_id),
-    FOREIGN KEY (game_id) REFERENCES Games (game_id),
-    FOREIGN KEY (cart_id) REFERENCES Cart (cart_id)
+CREATE TABLE `reviews` (
+  `review_id` int PRIMARY KEY AUTO_INCREMENT,
+  `user_id` int,
+  `game_id` int,
+  `review` varchar(255)
 );
 
-    CREATE TABLE Invoice(
-    invoice_id INT AUTO_INCREMENT, PRIMARY KEY(invoice_id),
-    total_price FLOAT,
-    date TIMESTAMP,
-    user_id INT,
-    KEY(user_id),
-    FOREIGN KEY (user_id) REFERENCES Users (user_id)
+CREATE TABLE `cart_items` (
+  `cart_items_id` int PRIMARY KEY AUTO_INCREMENT,
+  `game_id` int,
+  `invoice_id` int
 );
+
+ALTER TABLE `games` ADD FOREIGN KEY (`publisher_id`) REFERENCES `publishers` (`publisher_id`);
+ALTER TABLE `games` ADD FOREIGN KEY (`genre_id`) REFERENCES `genre` (`genre_id`);
+ALTER TABLE `invoice` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+ALTER TABLE `games` ADD FOREIGN KEY (`game_id`) REFERENCES `price` (`game_id`);
+ALTER TABLE `users` ADD FOREIGN KEY (`user_id`) REFERENCES `reviews` (`user_id`);
+ALTER TABLE `games` ADD FOREIGN KEY (`game_id`) REFERENCES `reviews` (`game_id`);
+ALTER TABLE `games` ADD FOREIGN KEY (`game_id`) REFERENCES `cart_items` (`game_id`);
+ALTER TABLE `invoice` ADD FOREIGN KEY (`invoice_id`) REFERENCES `cart_items` (`invoice_id`);

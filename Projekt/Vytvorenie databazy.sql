@@ -1,3 +1,5 @@
+create database online_herny_obchod
+
 CREATE TABLE `users` (
   `user_id` int PRIMARY KEY AUTO_INCREMENT,
   `username` varchar(16) UNIQUE NOT NULL,
@@ -50,7 +52,6 @@ CREATE TABLE `price` (
 CREATE TABLE `invoice` (
   `invoice_id` int PRIMARY KEY AUTO_INCREMENT,
   `user_id` int NOT NULL,
-  `total_price` float NOT NULL,
   `date` timestamp NOT NULL
 );
 
@@ -58,7 +59,9 @@ CREATE TABLE `reviews` (
   `review_id` int PRIMARY KEY AUTO_INCREMENT,
   `user_id` int NOT NULL,
   `game_id` int NOT NULL,
-  `review` varchar(255) NOT NULL
+  `review` text NOT NULL,
+  `positive_review` boolean NOT NULL
+
 );
 
 CREATE TABLE `cart_items` (
@@ -88,3 +91,5 @@ ALTER TABLE `library` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
 ALTER TABLE `library` ADD FOREIGN KEY (`game_id`) REFERENCES `games` (`game_id`);
 
 ALTER TABLE `users` ADD FOREIGN KEY (`country_id`) REFERENCES `country` (`country_id`);
+
+

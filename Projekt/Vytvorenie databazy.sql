@@ -1,4 +1,4 @@
-create database online_herny_obchod
+CREATE DATABASE online_herny_obchod;
 
 CREATE TABLE `users` (
   `user_id` int PRIMARY KEY AUTO_INCREMENT,

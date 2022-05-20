@@ -29,6 +29,7 @@ CREATE TABLE `games` (
   `name` varchar(32) UNIQUE NOT NULL,
   `genre_id` int NOT NULL,
   `publisher_id` int NOT NULL,
+  `avatar` varchar(64) NOT NULL,
   `release_date` timestamp NOT NULL
 );
 

@@ -1,6 +1,3 @@
-CREATE DATABASE online_herny_obchod;
-USE online_herny_obchod;
-
 CREATE TABLE `users` (
   `user_id` int PRIMARY KEY AUTO_INCREMENT,
   `username` varchar(16) UNIQUE NOT NULL,

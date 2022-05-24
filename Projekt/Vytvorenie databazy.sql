@@ -7,7 +7,7 @@ CREATE TABLE `users` (
   `fullname` varchar(64) NOT NULL,
   `email` varchar(32) UNIQUE NOT NULL,
   `password` varchar(32) NOT NULL,
-  `wallet` float,
+  `wallet` float NOT NULL DEFAULT 0,
   `country_id` int NOT NULL,
   `address` varchar(64) NOT NULL,
   `date_created` timestamp NOT NULL

@@ -1,6 +1,7 @@
 #COUNTRY
 INSERT INTO country (country_name)
 VALUES
+('Unset'),
 ('Slovakia'),
 ('United States of America'),
 ('United Kingdom'),
@@ -20,21 +21,21 @@ VALUES
 #USERS
 INSERT INTO users (username, fullname, email, password, wallet, country_id, address, date_created)
 VALUES
-('ReAKeR', 'Miroslav Holienčin', 'miro875@azet.sk', 'MiRo15273*', 715.94, 1, '02304 Stará Bystrica 875', '2018-08-20 14:28:53'),
-('Krokodyl145','Denis Cyprich', 'kroko145@gmail.com', 'Cgc3Fsr1', 2.31, 1, '83106 Bratislava 35', '2016-05-07 23:43:41'),
-('morocoro', 'Ashley Hart', 'ashley512@outlook.com', 'AsHa651*f', 7.12, 2, '60607 Illinois 1200 S Harrison St, Apt.5', '2019-12-20 18:01:31'),
-('Along-me', 'Jozef Bugal', 'jozobugal69@gmail.com', 'jozik123456', 246, 1, '04018 Hviezdoslavova 28', '2018-01-13 08:23:59'),
-('IceGood', 'Ištvan Procházka', 'istvi123@centrum.cz', 'prochazecka321', 5.26, 5, '69681 Jihomoravská 84','2021-08-27 11:27:03'),
-('Mr_Pudgers', 'Mikuláš Petrovický', 'mikulka.@azet.sk', 'hesloheslo123', 0.21, 1, '04013 Madridská 8', '2020-02-02 12:36:54'),
-('Dunk_995', 'Nathan MacKinnon', 'machan29@gmail.com', 'hockeyismypassion', 2731.87, 2, '88059 Julia Robert Street 15','2017-04-17 04:26:47'),
-('bibabobabi', 'Robert Mikla', 'robcis.miklovic@centrum.sk', 'novasuperstarsomja123', 147.87, 1, '8316 Astrová 13', '2017-06-15 19:42:53 '),
-('Tooo', 'Leonard Horváth', 'horvath.leo@gmail.com', 'horvileo128', 5, 1, '94905 Zelená 3', '2019-12-27 01:27:31'),
-('RATAN', 'Katarína Šťastná', 'stastnakatka@aol.com', 'katkajeborka492', 25, 1, '92101 Hlavná 43', '2017-07-03 13:04:09'),
-('captainhentai', 'Ľubica Podhájová', 'lubkapodhajka@centrum.sk', 'GfRL67-l2P', 6.69, 1, '85212 Kutlíková 14', '2021-09-09 16:04:48'),
-('A1bert_Einstein', 'Radovan Chrabrý', 'radko.radko@azet.sk', 'radekchrabro720', 0, 1, '82686 Drieňová 6', '2022-01-03 18:24:46'),
-('Mopnex', 'Leon Draisaitl', 'drain.leon@gmail.com', '7Hy+dkfwuj$', 113, 11, '50301 Postfach 540496', '2015-06-28 14:46:26'),
-('SilentSpank', 'Mats Zuccarello', 'mats@zuccarello.com', '8kWndpI7_dB', 814.99, 13, '0107 Svingen 18', '2014-12-20 15:28:56'),
-('Krotov', 'Jaroslav Török', 'torok.jaroslav@gmail.com', 'jaro**18111979', 14.84, 1, '81002 Palisády 9', '2016-07-12 23:58:12');
+('ReAKeR', 'Miroslav Holienčin', 'miro875@azet.sk', 'MiRo15273*', 715.94, 2, '02304 Stará Bystrica 875', '2018-08-20 14:28:53'),
+('Krokodyl145','Denis Cyprich', 'kroko145@gmail.com', 'Cgc3Fsr1', 2.31, 2, '83106 Bratislava 35', '2016-05-07 23:43:41'),
+('morocoro', 'Ashley Hart', 'ashley512@outlook.com', 'AsHa651*f', 7.12, 3, '60607 Illinois 1200 S Harrison St, Apt.5', '2019-12-20 18:01:31'),
+('Along-me', 'Jozef Bugal', 'jozobugal69@gmail.com', 'jozik123456', 246, 2, '04018 Hviezdoslavova 28', '2018-01-13 08:23:59'),
+('IceGood', 'Ištvan Procházka', 'istvi123@centrum.cz', 'prochazecka321', 5.26, 6, '69681 Jihomoravská 84','2021-08-27 11:27:03'),
+('Mr_Pudgers', 'Mikuláš Petrovický', 'mikulka.@azet.sk', 'hesloheslo123', 0.21, 2, '04013 Madridská 8', '2020-02-02 12:36:54'),
+('Dunk_995', 'Nathan MacKinnon', 'machan29@gmail.com', 'hockeyismypassion', 2731.87, 3, '88059 Julia Robert Street 15','2017-04-17 04:26:47'),
+('bibabobabi', 'Robert Mikla', 'robcis.miklovic@centrum.sk', 'novasuperstarsomja123', 147.87, 2, '8316 Astrová 13', '2017-06-15 19:42:53 '),
+('Tooo', 'Leonard Horváth', 'horvath.leo@gmail.com', 'horvileo128', 5, 2, '94905 Zelená 3', '2019-12-27 01:27:31'),
+('RATAN', 'Katarína Šťastná', 'stastnakatka@aol.com', 'katkajeborka492', 25, 2, '92101 Hlavná 43', '2017-07-03 13:04:09'),
+('captainhentai', 'Ľubica Podhájová', 'lubkapodhajka@centrum.sk', 'GfRL67-l2P', 6.69, 2, '85212 Kutlíková 14', '2021-09-09 16:04:48'),
+('A1bert_Einstein', 'Radovan Chrabrý', 'radko.radko@azet.sk', 'radekchrabro720', 0, 2, '82686 Drieňová 6', '2022-01-03 18:24:46'),
+('Mopnex', 'Leon Draisaitl', 'drain.leon@gmail.com', '7Hy+dkfwuj$', 113, 12, '50301 Postfach 540496', '2015-06-28 14:46:26'),
+('SilentSpank', 'Mats Zuccarello', 'mats@zuccarello.com', '8kWndpI7_dB', 814.99, 14, '0107 Svingen 18', '2014-12-20 15:28:56'),
+('Krotov', 'Jaroslav Török', 'torok.jaroslav@gmail.com', 'jaro**18111979', 14.84, 2, '81002 Palisády 9', '2016-07-12 23:58:12');
 
 #PUBLISHERS
 INSERT INTO publishers (username, email)

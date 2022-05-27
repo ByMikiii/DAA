@@ -7,6 +7,7 @@ CREATE TABLE `users` (
   `wallet` float NOT NULL DEFAULT 0,
   `country_id` int DEFAULT 1,
   `address` varchar(64) DEFAULT '',
+  `avatar_path` varchar(255) DEFAULT '/Gamestore/Images/profileavatar.png',
   `date_created` timestamp NOT NULL
 );
 

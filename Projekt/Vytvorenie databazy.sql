@@ -1,12 +1,12 @@
 CREATE TABLE `users` (
   `user_id` int PRIMARY KEY AUTO_INCREMENT,
   `username` varchar(16) UNIQUE NOT NULL,
-  `fullname` varchar(64),
+  `fullname` varchar(64) DEFAULT '',
   `email` varchar(32) UNIQUE NOT NULL,
   `password` varchar(32) NOT NULL,
   `wallet` float NOT NULL DEFAULT 0,
-  `country_id` int,
-  `address` varchar(64),
+  `country_id` int DEFAULT 1,
+  `address` varchar(64) DEFAULT '',
   `date_created` timestamp NOT NULL
 );
 
